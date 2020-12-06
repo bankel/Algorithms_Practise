@@ -1,0 +1,7 @@
+./cmake-build-debug/*
+/cmake-build-debug/CMakeFiles/Algorithm.dir/Two_Sum.cpp.o
+/cmake-build-debug/CMakeFiles/Algorithm.dir/Count_Primes.cpp.o
+/cmake-build-debug/CMakeFiles/Algorithm.dir/Longest_Palindromic_Substring.cpp.o
+/cmake-build-debug/CMakeFiles/Algorithm.dir/palindrome.cpp.o
+/cmake-build-debug/CMakeFiles/Algorithm.dir/Reverse_Integer.cpp.o
+/cmake-build-debug/CMakeFiles/Algorithm.dir/Split_Array_into_Consecutive_Subsequences.cpp.o
