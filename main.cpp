@@ -4,21 +4,15 @@
 #include "Reverse_Integer.h"
 #include "palindrome.h"
 #include "Longest_Palindromic_Substring.h"
-#include "Pascal_Triangle.h"
-
+//#include "Pascal_Triangle.h"
+#include "Roman_To_Integer.h"
 using namespace std;
 
 int main() {
 
-    const vector<vector<int>> &pascal = Pascal_Triangle().generate(5);
-
-    for (std::vector<int> rows: pascal) {
-        for (int num: rows) {
-            cout<<num+" ";
-        }
-        cout<<"\n";
-    }
-    
+    string input = "LVIII";
+    int result = Roman_To_Integer().romanToInt(input);
+    cout<<result<<endl;
     return 0;
 }
 
