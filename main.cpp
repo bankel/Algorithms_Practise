@@ -6,12 +6,15 @@
 #include "Longest_Palindromic_Substring.h"
 //#include "Pascal_Triangle.h"
 #include "Roman_To_Integer.h"
+#include "Longest_Common_Prefix.h"
+
+
 using namespace std;
 
 int main() {
 
-    string input = "LVIII";
-    int result = Roman_To_Integer().romanToInt(input);
+    vector<string> input = {"a","flow","flight"};
+    string result = Longest_Common_Prefix().longestCommonPrefix2(input);
     cout<<result<<endl;
     return 0;
 }
