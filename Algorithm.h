@@ -14,6 +14,9 @@ public:
     bool lemonadeChange(vector<int>& bills);
     string reverseLeftWords(string s, int n);
     char firstUniqChar(string s);
+    vector<vector<int>> threeSum(vector<int>& nums);
+    vector<vector<int>> threeSum2(vector<int>& nums);
+    int search(vector<int>& nums, int target);
 };
 
 

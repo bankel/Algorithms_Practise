@@ -4,9 +4,14 @@
 
 #include "Algorithm.h"
 #include <unordered_map>
+#include <unordered_set>
 #include <cstring>
 #include <string>
 #include <iostream>
+
+#include <set>
+#include <__hash_table>
+
 
 using namespace std;
 
@@ -115,4 +120,55 @@ char Algorithm::firstUniqChar(string s) {
     }
 
     return ' ';
+}
+
+
+vector<vector<int>> Algorithm::threeSum(vector<int>& nums){
+    set<vector<int>> vectorSets;
+    vector<vector<int>> threeNums;
+    unordered_set<int> numsCount;
+    for(int i=0; i< nums.size(); i++){
+        int two_sum = - nums[i];
+        for (int m = i+1; m < nums.size(); m++) {
+            if(numsCount.count(nums[m])){
+                //find the three num i, m, numsCount[two_sum - nums[m]]
+                vector<int> three_num = {nums[i], two_sum - nums[m], nums[m]};
+                sort(three_num.begin(), three_num.end());
+                vectorSets.insert(three_num);
+            }else{
+                numsCount.insert(two_sum - nums[m]);
+            }
+        }
+        numsCount.clear();
+    }
+
+    for(set<vector<int>>::iterator vi=vectorSets.begin() ;vi!=vectorSets.end();vi++)
+    {
+        threeNums.push_back(*vi);
+    }
+
+    return threeNums;
+}
+
+vector<vector<int>> Algorithm::threeSum2(vector<int>& nums){
+    sort(nums.begin(), nums.end());
+
+}
+
+
+int Algorithm::search(vector<int>& nums, int target) {
+    if(nums.size()==0) return 0;
+    vector<int>::iterator  it = lower_bound(nums.begin(), nums.end(), target);
+
+    int find_index = it - nums.begin();
+    if(find_index < 0) return 0;
+    if(nums[find_index] != target) return 0;
+
+    int sum = 0;
+    while(find_index < nums.size() && nums[find_index] == target){
+        find_index++;
+        sum++;
+    }
+
+    return sum;
 }
